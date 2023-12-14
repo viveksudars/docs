@@ -55,7 +55,7 @@ description: 'Interpreting and using data within Mesh'
 
   <Accordion title="Contacts Influenced">
     **Definition**: 
-    Counts unique individuals associated with any opportunity who had prior interactions with the tactic or channel.
+    Counts unique individuals **associated with any opportunity** who had prior interactions with the tactic or channel.
 
     > **Importance**:
     > Determines the extent to which a tactic or channel has played a role in moving prospects towards opportunities.
@@ -66,7 +66,7 @@ description: 'Interpreting and using data within Mesh'
 
   <Accordion title="Accounts Influenced">
     **Definition**: 
-    The number of unique businesses associated with any opportunity that had prior interactions with the tactic or channel.
+    The number of unique businesses **associated with any opportunity** that had prior interactions with the tactic or channel.
 
     > **Importance**:
     > Highlights the tactic's influence on business entities in relation to sales opportunities.
@@ -77,7 +77,7 @@ description: 'Interpreting and using data within Mesh'
 
   <Accordion title="Opportunities Influenced">
     **Definition**: 
-    The # of opportunities associated with individuals who were touched by this tactic or channel, where the touch happened any time before the opportunity closed.
+    The # of opportunities associated with individuals who were touched by this tactic or channel, **where the touch happened any time before the opportunity closed.**
 
     > **Importance**:
     > Measures which of your marketing has helped influence opportunities.
@@ -121,7 +121,8 @@ description: 'Interpreting and using data within Mesh'
 
   <Accordion title="Influenced Revenue">
     **Definition**: 
-    The influence revenue attributed to each tactic or channel, based on a blend of multiple multi-touch attribution models.
+    Multi-Touch: The influenced revenue attributed to each tactic, based on a blend of multiple multi-touch attribution models, with credit distributed amongs the tactics.
+    First-Touch: The influenced revenue attributed to each tactic, with 100% credit for pipeline going to the first tactic touched.
 
     > **Importance**:
     > This shows the revenue contribution associated with each marketing tactic, factoring in that tactic's influence. Our ensemble model takes into account multiple MTA models to assign the appropriate weight to each tactic and then uses that weight to determine revenue contribution.
@@ -139,8 +140,8 @@ description: 'Interpreting and using data within Mesh'
     >
     > **Use Case**:
     > This is essential for understanding true revenue impact of your marketing accounting for volume and reach of your marketing. 
-    > For example, if a Google Ad engaged 500k contacts and produced influenced revenue of $500k, it's influenced revenue per engagement would be $1. 
-    > Whereas if a blog post engaged 10k contacts and produced influenced revenue of $50k, it's influenced revenue per engagement would be $5. 
+    > For example, if a Google Ad engaged 500k contacts and produced influenced revenue of 500k, it's influenced revenue per engagement would be 1. 
+    > Whereas if a blog post engaged 10k contacts and produced influenced revenue of 50k, it's influenced revenue per engagement would be 5. 
     > This would indicate that the revenue efficiency of the blog post was greater than the Google Ad.
   </Accordion>
 
@@ -212,7 +213,8 @@ description: 'Interpreting and using data within Mesh'
 
   <Accordion title="Influenced Pipeline">
     **Definition**: 
-    The influenced pipeline attributed to each tactic or channel, based on a blend of multiple multi-touch attribution models.
+    Multi-Touch: The influenced pipeline attributed to each tactic, based on a blend of multiple multi-touch attribution models, with credit distributed amongs the tactics.
+    First-Touch: The influenced pipeline attributed to each tactic, with 100% credit for pipeline going to the first tactic touched.
 
     > **Importance**:
     > This shows the pipeline contribution associated with each marketing tactic, factoring in that tactic's influence. Our ensemble model takes into account multiple MTA models to assign the appropriate weight to each tactic and then uses that weight to determine pipeline contribution.
