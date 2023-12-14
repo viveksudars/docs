@@ -33,6 +33,11 @@
   ],
   "anchors": [
     {
+      "name": "Contact Us",
+      "icon": "mailbox",
+      "url": "mailto:support@withmesh.com"
+    },
+    {
       "name": "Blog",
       "icon": "newspaper",
       "url": "https://withmesh.com/blog"
@@ -44,21 +49,8 @@
       "pages": ["introduction", "definitions"]
     },
     {
-      "group": "API Documentation",
-      "pages": ["api-reference/introduction"]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
+      "group": "SDK Documentation",
+      "pages": ["sdk-reference/introduction", "sdk-reference/configuration", "sdk-reference/in-app"]
     }
-  ],
-  "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
-  }
+  ]
 }

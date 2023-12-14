@@ -1,33 +1,64 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: 'Installation'
+description: "Here's a quick overview of how to install and use Mesh in your web app or site. By adding this script to your site we'll start tracking visitor interactions from your ads, including IP to account resolution, capturing UTM parameters etc. By doing this we can create a clear picture of your prospect's interaction journey."
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+### Insert the Mesh SDK script tag
 
-## Welcome
+Add the following to the footer of every page you'd like Mesh to appear. 
+Make sure to replace your SDK key at the end of the script with the one in the Settings of your Mesh dashboard.
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+This approach is best suited for marketing sites. 
+If you use Google Tag Manager you can add this script directly in the Tag Manager console as a new tag.
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+There are two options for tracking, cookie-based or fingerprint-based. 
+Cookie-based tracking can offer higher success in recognizing visitors across sessions, but if users opt out of cookies they will not be tracked across sessions. 
+Fingerprint-based tracking uses device markers to identify if a user has previously visited the site - which will work regardless of cookie preference but has a small chance of not recognizing a returning visitor.
 
-## Authentication
+<CodeGroup>
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
-
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+```js Cookie-based Tracking
+<script>
+(function (m,e,s,h,a,i,c) {
+  m[a] = m[a] || function () {
+    (m[a].q = m[a].q || []).push(arguments);
+  };
+  var o = document.createElement(s);
+  o.type = 'text/javascript';
+  o.id = 'mesh-analytics-sdk';
+  o.async = true;
+  o.src = h;
+  o.setAttribute("data-mesh-sdk", i);
+  o.setAttribute("data-mesh-sdk-attributes", JSON.stringify(c));
+  var x = document.getElementsByTagName(s)[0];
+  x.parentNode.insertBefore(o, x);
+})(window,document,'script',
+   'https://cdn.jsdelivr.net/npm/@mesh-interactive/mesh-sdk@latest/dist/umd/index.js','mesh',
+   'YOUR SDK KEY HERE',
+   {useFingerprint: false, track:{session: true, forms: true}});
+</script>
 ```
+
+```js Fingerprint-based Tracking
+<script>
+(function (m,e,s,h,a,i,c) {
+  m[a] = m[a] || function () {
+    (m[a].q = m[a].q || []).push(arguments);
+  };
+  var o = document.createElement(s);
+  o.type = 'text/javascript';
+  o.id = 'mesh-analytics-sdk';
+  o.async = true;
+  o.src = h;
+  o.setAttribute("data-mesh-sdk", i);
+  o.setAttribute("data-mesh-sdk-attributes", JSON.stringify(c));
+  var x = document.getElementsByTagName(s)[0];
+  x.parentNode.insertBefore(o, x);
+})(window,document,'script',
+   'https://cdn.jsdelivr.net/npm/@mesh-interactive/mesh-sdk@latest/dist/umd/index.js','mesh',
+   'YOUR SDK KEY HERE',
+   {useFingerprint: true, track:{session: true, forms: true}});
+</script>
+```
+
+</CodeGroup>

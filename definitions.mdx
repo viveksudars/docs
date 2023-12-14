@@ -4,6 +4,266 @@ description: 'Interpreting and using data within Mesh'
 ---
 
 <Note>
-  Any of the columns below can be renamed to match your current data language. New columns based on custom data 
+  Any of the columns below can be renamed to match your current data language. 
+  New columns can be added by request based on custom data in any integrated data source.
 </Note>
+
+<AccordionGroup>
+  <Accordion title="Contacts Engaged">
+    **Definition**: 
+    Represents the total number of visitors, including anonymous visitors, who have interacted with a specific marketing tactic or channel. This is a sum of existing visitors, and any new visitors that interacted with your marketing for the first time in the time range.
+
+    > **Importance**:
+    > Measures total engagement across all visitors for a given marketing tactic. 
+    >
+    > **Use Case**:
+    > Useful for evaluating the reach of a marketing tactic or channel. For instance, if a new blog post reaches 5,000 visitors, you can assess the total reach of that post within the time period for new and existing contacts.
+  </Accordion>
+
+  <Accordion title="Accounts Engaged">
+    **Definition**: 
+    The number of accounts that interacted with a marketing tactic or channel.
+
+    > **Importance**:
+    > Indicates the tactic's effectiveness in reaching accounts, not just individual contacts.
+    >
+    > **Use Case**:
+    > Helpful in B2B contexts as an alternate way to evaluate the reach of a marketing tactic or channel by rolling up reach to the account level.
+  </Accordion>
+
+   <Accordion title="[Stage] Created">
+    **Definition**: 
+    These columns represent new individuals that have entered the given stage after touching one of your marketing tactics within the specified time range.
+
+    > **Importance**:
+    > Indicates the tactic's effectiveness at pushing contacts down the funnel.
+    >
+    > **Use Case**:
+    > These columns can be used to determine which tactics have been most effective at specific stages of your pipeline. For example, if the Leads Created for a specific blog post are higher than other tactics, you might interpret that blog post as having greater influence at that stage of the funnel.
+  </Accordion>
+
+  <Accordion title="[Stage] Conversion Rate">
+    **Definition**: 
+    The percentage of individuals in that stage relative to the total Contacts Engaged for a specific tactic or channel.
+
+    > **Importance**:
+    > Offers insight into the conversion effectiveness of each stage for your marketing tactics.
+    >
+    > **Use Case**:
+    > Useful in comparing efficiency across channels. If a LinkedIn ad campaign has a 10% MQL rate (100 MQLs from 1,000 contacts) compared to a email campaign's 5% rate (50 MQLs from 1,000 contacts), it indicates higher efficiency for moving deals down funnel for the LinkedIn ad.
+  </Accordion>
+
+  <Accordion title="Contacts Influenced">
+    **Definition**: 
+    Counts unique individuals associated with any opportunity who had prior interactions with the tactic or channel.
+
+    > **Importance**:
+    > Determines the extent to which a tactic or channel has played a role in moving prospects towards opportunities.
+    >
+    > **Use Case**:
+    > Key in assessing influence on the sales process. For example, if 200 individuals associated with new opportunities had interacted with a specific webinar, it suggests the webinar's significant role in advancing leads in the sales funnel.
+  </Accordion>
+
+  <Accordion title="Accounts Influenced">
+    **Definition**: 
+    The number of unique businesses associated with any opportunity that had prior interactions with the tactic or channel.
+
+    > **Importance**:
+    > Highlights the tactic's influence on business entities in relation to sales opportunities.
+    >
+    > **Use Case**:
+    > Valuable for account level marketing impact analysis. For example, if an email campaign influences 50 businesses that are subsequently moved into the opportunity stage, it indicates the campaign's effectiveness in nurturing accounts down funnel.
+  </Accordion>
+
+  <Accordion title="Opportunities Influenced">
+    **Definition**: 
+    The # of opportunities associated with individuals who were touched by this tactic or channel, where the touch happened any time before the opportunity closed.
+
+    > **Importance**:
+    > Measures which of your marketing has helped influence opportunities.
+    >
+    > **Use Case**:
+    > Helpful for understanding marketing's impact post-opportunity. For instance, if 30% of opportunities in a quarter were influenced by a specific content marketing strategy, it underscores the strategy's role in supporting your sales process.
+  </Accordion>
+
+  <Accordion title="Closed Won Accounts Influenced">
+    **Definition**: 
+    The number of businesses that successfully closed won and had engaged with the tactic prior to close.
+
+    > **Importance**:
+    > Identifies which tactics are most effective in influencing successful deal closures.
+    >
+    > **Use Case**:
+    > Important for ROI analysis. For example, if 40 out of 100 closed won deals in a quarter were influenced by targeted LinkedIn ads, it demonstrates the ads' significant ROI in the sales process.
+  </Accordion>
+
+  <Accordion title="Average Won Deal Amount">
+    **Definition**: 
+    The average dollar value of closed-won deals that had engagement with the tactic or channel prior to close.
+
+    > **Importance**:
+    > Provides an average value of successful deals influenced by marketing tactics so that you can determine which marketing tactics are impacting the highest value deals.
+    >
+    > **Use Case**:
+    > If the average won deal amount for deals influenced by a Google Ads campaign is $50k vs 30k for other tactics, it indicates that the campaign influence higher value deals.
+  </Accordion>
+
+  <Accordion title="Total Won Deal Amount">
+    **Definition**: 
+    The total revenue generated from all closed-won deals that interacted with these tactics or channels prior to close.
+
+    > **Importance**:
+    > Measures the cumulative financial outcome connected with each marketing effort. This is measure shows the total sum of the revenue associated with these deals, but does not factor in influence. You can use this to understand which tactics touched the most revenue.
+    >
+    > **Use Case**:
+    > Helpful for assessing overall revenue impact of your marketing. If total revenue from closed-won deals that attended with particular trade show is $50,000, it highlights the event's overall contribution to revenue.
+  </Accordion>
+
+  <Accordion title="Influenced Revenue">
+    **Definition**: 
+    The influence revenue attributed to each tactic or channel, based on a blend of multiple multi-touch attribution models.
+
+    > **Importance**:
+    > This shows the revenue contribution associated with each marketing tactic, factoring in that tactic's influence. Our ensemble model takes into account multiple MTA models to assign the appropriate weight to each tactic and then uses that weight to determine revenue contribution.
+    >
+    > **Use Case**:
+    > Critical for understanding revenue attribution for your marketing. For example, comparing influenced revenue of Paid vs. Organic can give you a sense of which category of tactics is actually moving the needle in terms of closed won dollars. This metric is used in the calculation of ROI.
+  </Accordion>
+
+  <Accordion title="Influenced Revenue Per Engagement">
+    **Definition**: 
+    Influenced Revenue divided by Contacts Engaged. It calculates how much revenue is attributed to each tactic or channel, per engagement, based on a blend of multiple multi-touch attribution models.
+
+    > **Importance**:
+    > Provides insights into the efficiency of marketing tactics in generating revenue relative to the level of engagement. This metric normalizes the influenced revenue metric above.
+    >
+    > **Use Case**:
+    > This is essential for understanding true revenue impact of your marketing accounting for volume and reach of your marketing. 
+    > For example, if a Google Ad engaged 500k contacts and produced influenced revenue of $500k, it's influenced revenue per engagement would be $1. 
+    > Whereas if a blog post engaged 10k contacts and produced influenced revenue of $50k, it's influenced revenue per engagement would be $5. 
+    > This would indicate that the revenue efficiency of the blog post was greater than the Google Ad.
+  </Accordion>
+
+  <Accordion title="Closed Lost Accounts Influenced">
+    **Definition**: 
+    The number of unique businesses that were closed lost (i.e., unsuccessful deals) who engaged with this tactic or channel within the influence window.
+
+    > **Importance**:
+    > Helps in understanding the influence of marketing tactics on deals that did not close successfully.
+    >
+    > **Use Case**:
+    > Important for refining strategies. For example, if a high number of closed lost accounts were heavily influenced by a particular PPC campaign, it may indicate a need to reevaluate the targeting or messaging of that campaign.
+  </Accordion>
+
+  <Accordion title="Average Lost Deal Amount">
+    **Definition**: 
+    The average dollar amount of closed lost deals that engaged with this tactic or channel within the influence window.
+
+    > **Importance**:
+    > Offers insights into the average value of deals that were not won, but had engagement with marketing tactics.
+    >
+    > **Use Case**:
+    > Useful in assessing unsuccessful efforts. For instance, if the average lost deal amount for deals influenced by an email campaign is significantly higher than other tactics, it might suggest a mismatch between the campaign and the high-value prospects it attracts.
+  </Accordion>
+
+  <Accordion title="Total Lost Deal Amount">
+    **Definition**: 
+    The total amount of revenue from closed lost deals that interacted with these tactics or channels within the influence window.
+
+    > **Importance**:
+    > Measures the total impact of marketing tactics on deals that were not closed successfully.
+    >
+    > **Use Case**:
+    > Vital for understanding the financial implications of lost deals. For instance, if the total lost deal amount influenced by a specific digital marketing channel is substantial, it could prompt a strategic review of investment in that channel.
+  </Accordion>
+
+  <Accordion title="Pipeline Accounts Influenced">
+    **Definition**: 
+    The number of unique businesses with open opportunities that engaged with this tactic or channel within the influence window.
+
+    > **Importance**:
+    > Indicates the potential future impact of marketing tactics on currently open business opportunities.
+    >
+    > **Use Case**:
+    > Essential for future revenue projections. For example, tracking the number of pipeline accounts influenced by a webinar series can help predict future deal closures and guide resource allocation for similar events.
+  </Accordion>
+
+  <Accordion title="Average Pipeline Deal Amount">
+    **Definition**: 
+    The average deal size of businesses with currently open opportunities that engaged with this tactic or channel within the influence window.
+
+    > **Importance**:
+    > Provides a gauge for the potential value of open opportunities influenced by marketing tactics.
+    >
+    > **Use Case**:
+    > Critical in forecasting potential deal sizes. If the average pipeline deal size for accounts engaged through content marketing is $40,000, it can guide expectations and strategy for similar content initiatives.
+  </Accordion>
+
+  <Accordion title="Total Pipeline Deal Amount">
+    **Definition**: 
+    The total amount of revenue of deals in the pipeline that interacted with these tactics or channels within the influence window.
+
+    > **Importance**:
+    > Measures the cumulative potential revenue from all open deals influenced by marketing strategies.
+    >
+    > **Use Case**:
+    > Key in assessing potential revenue impact. For example, if total pipeline revenue for deals influenced by SEM efforts is $5 million, it highlights the significant future revenue potential of these efforts.
+  </Accordion>
+
+  <Accordion title="Influenced Pipeline">
+    **Definition**: 
+    The influenced pipeline attributed to each tactic or channel, based on a blend of multiple multi-touch attribution models.
+
+    > **Importance**:
+    > This shows the pipeline contribution associated with each marketing tactic, factoring in that tactic's influence. Our ensemble model takes into account multiple MTA models to assign the appropriate weight to each tactic and then uses that weight to determine pipeline contribution.
+    >
+    > **Use Case**:
+    > Useful for understanding pipeline attribution for your marketing. For example, comparing influenced pipeline of Events vs. Paid can give you a sense of which category of tactics is actually moving the needle in terms of high value opportunity creation. This metric is used in the calculation of ROI (pipeline).
+  </Accordion>
+
+  <Accordion title="Total Cost">
+    **Definition**: 
+    This metric only applies to channels where there is cost data available, in most cases this is just Paid and/or Events.
+
+    > **Importance**:
+    > This data is used in our ROI calculations - we compare the influenced revenue / pipeline of each marketing effort to it's cost if available.
+    >
+    > **Use Case**:
+    > Useful for understanding cost by marketing tactic and is required to understand ROI and Pipeline ROI.
+  </Accordion>
+
+  <Accordion title="Cost per [Stage]">
+    **Definition**: 
+    Total cost divided by # of contacts or accounts within a given stage. This metric only applies to channels where there is cost data available, in most cases this is just Paid and/or Events.
+
+    > **Importance**:
+    > This can give you a sense of how cost of each lead, MQL, SQL etc. acquired through a specific marketing channel.
+    >
+    > **Use Case**:
+    > Cost per stage data can be used to determine the efficiency of your marketing expenditure at each stage of the funnel to understand how efficient your dollars are at moving deals down funnel.
+  </Accordion>
+
+  <Accordion title="ROI (Pipeline)">
+    **Definition**: 
+    Influenced pipeline divided by total cost.
+
+    > **Importance**:
+    > ROI (Pipeline) shows influenced pipeline by marketing tactic vs. cost of investment for that tactic. This will tend to be much higher than pure ROI because it includes all opportunities influenced by this tactic, some of which may not close.
+    >
+    > **Use Case**:
+    > This can be used to understand the ROI of prospective deals in the funnel, which is especially important if you have a long sales cycle.
+  </Accordion>
+
+  <Accordion title="ROI">
+    **Definition**: 
+    Influenced revenue divided by total cost.
+
+    > **Importance**:
+    > ROI shows influenced revenue by marketing tactic vs. cost of investment for that tactic within the specified time range. 
+    >
+    > **Use Case**:
+    > ROI is the clearest metric you can use to understand whether an investment in certain marketing tactics was worth it. When looking at ad spend, this is comparable to ROAS.
+  </Accordion>
+</AccordionGroup>
+
 

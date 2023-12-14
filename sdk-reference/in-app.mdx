@@ -1,0 +1,73 @@
+---
+title: 'Using Mesh in Your Web App'
+description: "How to set up the SDK for usage in a web app"
+---
+
+### Insert the Mesh SDK script tag
+
+In some cases it may be necessary to include Mesh tracking in your product in addition to your marketing properties. For example, if you have a self-service option to sign up for your product we may not be able to identify a visitor before they sign up for your service. In order to tie back marketing touchpoints to those users, the Mesh SDK has a built in app mode that allows you to link users back to their marketing activity.
+
+The app mode of Mesh can be enabled by setting appMode in the Mesh script to true:
+
+<CodeGroup>
+
+```js In-App Script (Cookie-Based)
+<script>
+(function (m,e,s,h,a,i,c) {
+  m[a] = m[a] || function () {
+    (m[a].q = m[a].q || []).push(arguments);
+  };
+  var o = document.createElement(s);
+  o.type = 'text/javascript';
+  o.id = 'mesh-analytics-sdk';
+  o.async = true;
+  o.src = h;
+  o.setAttribute("data-mesh-sdk", i);
+  o.setAttribute("data-mesh-sdk-attributes", JSON.stringify(c));
+  var x = document.getElementsByTagName(s)[0];
+  x.parentNode.insertBefore(o, x);
+})(window,document,'script',
+   'https://cdn.jsdelivr.net/npm/@mesh-interactive/mesh-sdk@latest/dist/umd/index.js','mesh',
+   'YOUR SDK KEY HERE',
+   {useFingerprint: false, appMode: true, track:{session: true, forms: false}});
+</script>
+```
+
+```js In-App Script (Fingerprint-Based)
+<script>
+(function (m,e,s,h,a,i,c) {
+  m[a] = m[a] || function () {
+    (m[a].q = m[a].q || []).push(arguments);
+  };
+  var o = document.createElement(s);
+  o.type = 'text/javascript';
+  o.id = 'mesh-analytics-sdk';
+  o.async = true;
+  o.src = h;
+  o.setAttribute("data-mesh-sdk", i);
+  o.setAttribute("data-mesh-sdk-attributes", JSON.stringify(c));
+  var x = document.getElementsByTagName(s)[0];
+  x.parentNode.insertBefore(o, x);
+})(window,document,'script',
+   'https://cdn.jsdelivr.net/npm/@mesh-interactive/mesh-sdk@latest/dist/umd/index.js','mesh',
+   'YOUR SDK KEY HERE',
+   {useFingerprint: true, appMode: true, track:{session: true, forms: false}});
+</script>
+```
+</CodeGroup>
+
+Once installed in your app, Mesh exposes a method to allow you to push user information to us. You can send the following piece of user information: first name, last name, email, company and title
+
+You can do that like this:
+
+<CodeGroup>
+```js Mesh Identify Request
+mesh.identify({
+  firstName: "William",
+  lastName: "Adama",
+  email: "william.adama@galactica.com",
+  company: "New Caprica",
+  title: "Admiral"
+});
+```
+</CodeGroup>

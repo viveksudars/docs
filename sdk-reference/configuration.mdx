@@ -1,0 +1,41 @@
+---
+title: 'Configuration'
+description: "Change tracking and form handling configuration in the SDK"
+---
+
+### Handling forms embedded in iframes
+
+If you have forms embedded in iframes on your website and want Mesh to track those forms, you'll need to add the Mesh SDK to the site in the iframe, with session tracking ignored (see below). This will allow Mesh to track the form fills on the page without recording a duplicate session.
+
+Platforms that use iframes for forms:
+
+<Card>
+**Salesforce Pardot:** You can add the Mesh SDK in the Look & Feel menu when customizing your Pardot forms:
+
+
+<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/59499b792c7d3a0747ce0c73/images/5e5d2ae804286364bc9617ab/file-L3t4crBZ2r.png" />
+</Card>
+
+### Limiting page tracking
+
+By default the Mesh SDK will track page session activity (views, time spent on page, % of page viewed and other event data) as well as form fill activity for any form on the page (automatically excluding sensitive fields). In some situations you may want to restrict the SDK from tracking either sessions, forms or both.
+
+**Ignoring Form-Fill Tracking**
+  - In the event that you do not want Mesh to automatically capture partial form fill data on your site, you can disable this form tracking by switching the forms key in the track settings at end of the script to false. When this is set, the end of your script should look like this:
+
+<CodeGroup>
+```js Ignore Form-Fills
+track:{session: true, forms: false}
+```
+</CodeGroup>
+
+**Ignoring Session Tracking**
+
+<Note>Use this setting if you are adding the Mesh script to a form embedded in an iframe on your site.</Note>
+  - If you would like Mesh to ignore session data tracking an only track form fills on the page you can disable session tracking by switching the session key in the track settings at the end of the script to false. When this is set, the end of your script should look like this:
+
+<CodeGroup>
+```js Ignore Sessions
+track:{session: false, forms: true}
+```
+</CodeGroup>
