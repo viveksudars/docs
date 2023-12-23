@@ -49,10 +49,6 @@
       "pages": ["introduction", "definitions"]
     },
     {
-      "group": "Guides",
-      "pages": []
-    },
-    {
       "group": "SDK Documentation",
       "pages": ["sdk-reference/introduction", "sdk-reference/configuration", "sdk-reference/in-app"]
     }
